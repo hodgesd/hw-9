@@ -2,16 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply flex h-screen items-center justify-center;
+  }
+  h1 {
+    @apply mb-14 text-center text-3xl font-bold;
+  }
+}
 @layer components {
-  .App-header {
-    @apply flex min-h-screen flex-col items-center justify-center bg-primary-dark text-[calc(10px+2vmin)] text-white;
+  .board {
+    @apply container grid h-96 w-96 grid-cols-3 grid-rows-3;
   }
 
-  .App-link {
-    @apply text-primary-link;
+  .board div:nth-child(1),
+  .board div:nth-child(2),
+  .board div:nth-child(4),
+  .board div:nth-child(5),
+  .board div:nth-child(7),
+  .board div:nth-child(8) {
+    @apply border-r;
+  }
+  .board div:nth-child(1),
+  .board div:nth-child(2),
+  .board div:nth-child(3),
+  .board div:nth-child(4),
+  .board div:nth-child(5),
+  .board div:nth-child(6) {
+    @apply border-b;
   }
 
-  .App-logo {
-    @apply pointer-events-none h-[40vmin] animate-App-logo motion-reduce:animate-none;
+  .square {
+    @apply flex h-32 w-32 items-center justify-center border-black text-9xl;
+  }
+
+  .winner {
+    @apply mb-8 animate-bounce text-center text-xl font-bold;
   }
 }

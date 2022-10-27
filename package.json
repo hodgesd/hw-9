@@ -66,6 +66,7 @@
           "destructuredArrayIgnorePattern": "^_"
         }
       ],
+      "react/no-array-index-key": 1,
       "use-encapsulation/prefer-custom-hooks": 1
     }
   },

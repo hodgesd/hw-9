@@ -1,9 +1,13 @@
 import "./App.css";
+import Square from "./components/Square";
+import useGame from "./hooks/useGame";
 
 function App() {
-  // TODO: Add useReducer hook to track state of: board, turn, winner
+  const { board, makeMove, winner, turn } = useGame();
 
-  return <h1>Tic Tac Toe</h1>;
+  return board.map((square, index) => (
+    <Square key={index} id={index} handleClick={makeMove} />
+  ));
 }
 
 export default App;

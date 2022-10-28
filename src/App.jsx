@@ -3,11 +3,23 @@ import Square from "./components/Square";
 import useGame from "./hooks/useGame";
 
 function App() {
-  const { board, makeMove, winner, turn } = useGame();
+  const { board, winner, makeMove } = useGame();
 
-  return board.map((square, index) => (
-    <Square key={index} id={index} handleClick={makeMove} />
-  ));
+  return (
+    <main>
+      <div className="board">
+        {board.map((square, index) => (
+          // Actually pass in the dumb, stupid marker (square)
+          <Square
+            key={index}
+            id={index}
+            handleClick={makeMove}
+            marker={square}
+          />
+        ))}
+      </div>
+    </main>
+  );
 }
 
 export default App;

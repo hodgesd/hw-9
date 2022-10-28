@@ -1,19 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer base {
   body {
     @apply flex h-screen items-center justify-center;
   }
+
   h1 {
     @apply mb-14 text-center text-3xl font-bold;
   }
+
   button {
     @apply flex h-32 w-32 items-center justify-center border-black text-9xl;
   }
+
   p {
     @apply mb-8 animate-bounce text-center text-xl font-bold;
   }
+
   .board button:nth-child(1),
   .board button:nth-child(2),
   .board button:nth-child(4),
@@ -22,6 +27,7 @@
   .board button:nth-child(8) {
     @apply border-r;
   }
+
   .board button:nth-child(1),
   .board button:nth-child(2),
   .board button:nth-child(3),
@@ -31,6 +37,7 @@
     @apply border-b;
   }
 }
+
 @layer components {
   .board {
     @apply container grid h-96 w-96 grid-cols-3 grid-rows-3;

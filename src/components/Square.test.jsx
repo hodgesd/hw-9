@@ -20,7 +20,7 @@ describe("Square", () => {
   it("calls the the click handler function whenever clicked", async () => {
     const ID = 0;
 
-    const handleClick = jest.fn((event) => event.target.id);
+    const handleClick = jest.fn();
     const user = userEvent.setup();
 
     render(<Square id={ID} handleClick={handleClick} />);
@@ -30,6 +30,6 @@ describe("Square", () => {
     // Simulating a click event happens asynchronously
     await user.click(square);
 
-    expect(handleClick.mock.results[0].value).toBe(ID.toString());
+    expect(handleClick).toBeCalled();
   });
 });

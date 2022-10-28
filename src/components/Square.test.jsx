@@ -4,17 +4,22 @@ import Square from "./Square";
 
 describe("Square", () => {
   it("renders a square with a marker and the correct id", () => {
-    render(<Square marker="X" id={0} handleClick={() => {}} />);
-    const square = screen.getByRole("button", { name: "X" });
+    const ID = 0;
+    const MARKER = "X";
 
-    expect(square).toHaveAttribute("id", "0");
+    render(<Square marker={MARKER} id={ID} handleClick={() => {}} />);
+    const square = screen.getByRole("button", { name: MARKER });
+
+    expect(square).toHaveAttribute("id", ID.toString());
   });
 
   it("renders a square without a marker", () => {
-    render(<Square id={0} handleClick={() => {}} />);
+    const ID = 0;
+
+    render(<Square id={ID} handleClick={() => {}} />);
     const square = screen.getByRole("button");
 
-    expect(square).toHaveAttribute("id", "0");
+    expect(square).toHaveAttribute("id", ID.toString());
   });
 
   it("calls the the click handler function whenever clicked", async () => {

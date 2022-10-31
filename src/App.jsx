@@ -8,13 +8,12 @@ function App() {
   return (
     <main>
       <h1>Tic Tac Toe</h1>
-      {/* Print if winner */}
-      {winner && <h2>{winner} wins!</h2>}
-      {/* Click to restart game */}
+      {/* Print if winner in red text */}
+      <div className=" flex flex-col items-center text-ellipsis text-red-600">
+        {winner && <h2>{winner} wins!</h2>}
+      </div>
 
-      <button onClick={() => window.location.reload()} type="submit">
-        Restart
-      </button>
+      {/* Click to restart game */}
 
       <div className="board">
         {board.map((square, index) => (
@@ -27,6 +26,18 @@ function App() {
           />
         ))}
       </div>
+
+      {winner && (
+        <div className="flex flex-col items-center">
+          <button
+            className="mb-5 text-4xl font-bold text-gray-700"
+            onClick={() => window.location.reload()}
+            type="submit"
+          >
+            New Game
+          </button>
+        </div>
+      )}
     </main>
   );
 }

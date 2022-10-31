@@ -7,7 +7,7 @@ function reducer(state, action) {
       // Only mutate a local copy of the state
       const board2Update = [...state.board];
 
-      if (!board2Update[action.index]) {
+      if (!board2Update[action.index] && !state.winner) {
         board2Update[action.index] = state.turn;
       }
 
@@ -29,6 +29,9 @@ export default function useGame() {
   });
 
   const makeMove = (event) => {
+    if (state.winner) {
+      return;
+    }
     dispatch({ type: "made_move", index: event.target.id });
   };
 

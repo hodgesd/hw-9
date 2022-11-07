@@ -3,14 +3,15 @@ import Square from "./components/Square";
 import useGame from "./hooks/useGame";
 
 function App() {
-  const { board, winner, makeMove } = useGame();
+  const { board, turn, winner, makeMove } = useGame();
 
   return (
     <main>
       <h1>Tic Tac Toe</h1>
       {/* Print if winner in red text */}
       <div className=" flex flex-col items-center text-ellipsis text-red-600">
-        {winner && <h2>{winner} wins!</h2>}
+        {/* {winner && <h2>{winner} wins!</h2>} */}
+        {winner ? <h2>{winner} wins!</h2> : <h2>Current Turn: {turn}</h2>}
       </div>
 
       {/* Click to restart game */}

@@ -40,10 +40,11 @@ export default function useGame() {
     dispatch({ type: "made_move", index: event.target.id });
   };
 
-  const { board, winner } = state;
+  const { board, turn, winner } = state;
 
   return {
     board,
+    turn,
     winner,
     makeMove,
   };

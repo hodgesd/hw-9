@@ -22,10 +22,15 @@ function reducer(state, action) {
   }
 }
 
+function randomStart() {
+  const randInt = Math.round(Math.random());
+  return randInt ? "X" : "O";
+}
+
 export default function useGame() {
   const [state, dispatch] = useReducer(reducer, {
     board: Array(9).fill(null),
-    turn: "X",
+    turn: randomStart(),
   });
 
   const makeMove = (event) => {

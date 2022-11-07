@@ -20,5 +20,6 @@
   "files.trimTrailingWhitespace": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "javascript.validate.enable": false,
-  "prettier.requireConfig": true
+  "prettier.requireConfig": true,
+  "liveServer.settings.port": 5501
 }
